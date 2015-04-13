@@ -1,0 +1,27 @@
+* Mythbusters XKCD? Too wordy? Just the paragraph "By teaching people to hold their beliefs up to experiment, Mythbusters is doing more to drag humanity out of the unscientific darkness than a thousand lessons in rigor. <- Zombie Feynman
+  - https://xkcd.com/397/
+* What we do
+  &amp; Why we do it
+  10% investigation
+  90% fixing
+* Management
+  Have you fixed it yet?
+  Why aren't you fixing it now?!?
+* What we should do
+    - PDCA
+* Tools which can help 
+  * InfluxDB
+    - time series db
+    - scales horizontally through clustering
+    - SQL Like query language
+    - clients written in languages
+  * Graphana
+* Example?
+Theory, Change, Proof?
+More CPUs = faster, right?
+Contention issues
+
+* Repos
+  https://github.com/tutumcloud/tutum-docker-influxdb
+  https://github.com/tutumcloud/tutum-docker-grafana 
+  https://github.com/novaquark/sysinfo_influxdb.git (develop branch for latest version)
