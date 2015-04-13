@@ -4,25 +4,41 @@
 
 ```
   # git clone https://github.com/tutumcloud/tutum-docker-influxdb
-  docker run -d -p 8083:8083 -p 8086:8086 -e PRE_CREATE_DB="db1" --expose 8090 --expose 8099 tutum/influxdb
-  # Note the ip address *should* be determined based on this line but may not be...
+  docker run -d -p 8083:8083 -p 8086:8086 -e PRE_CREATE_DB="machine" --expose 8090 --expose 8099 tutum/influxdb
+  $local_ip_i_have_entered_manually=<something you have to do manually sorry>
   docker run -d -p 8082:80 \
-     -e INFLUXDB_HOST=$(ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://') \
+     -e INFLUXDB_HOST=$local_ip_i_have_entered_manually \
      -e INFLUXDB_PORT=8086 \
-     -e INFLUXDB_NAME=krut \
+     -e INFLUXDB_NAME=machine \
      -e INFLUXDB_USER=root \
      -e INFLUXDB_PASS=root \
      -e INFLUXDB_IS_GRAFANADB=true \
      tutum/grafana
 
 ```
-Now open http://localhost:8082
 
-### Links
+To access local InfluxDB open
+```
+  http://localhost:8082
+```
+
+To access local Graphana
+```
+  http://localhost:8082
+```
+
+
+### Links and thanks go to
 * Repos used
+
   https://github.com/tutumcloud/tutum-docker-influxdb
+
   https://github.com/tutumcloud/tutum-docker-grafana 
-  https://github.com/novaquark/sysinfo_influxdb.git (develop branch for latest version)
+
+  https://github.com/krutisfood/quick-dirty-stats.git
+
+  https://github.com/krutisfood/hello-metrics.git
+
 
 ## License
 
