@@ -8,9 +8,9 @@
   docker run -d -p 8083:8083 -p 8086:8086 -e PRE_CREATE_DB="nubuntu" --expose 8090 --expose 8099 tutum/influxdb
 
   # Setup Graphana reading from InfluxDB
-  $local_ip_i_have_entered_manually=<something you have to do manually sorry>
+  # NOTE: If you plan to open Graphana on a PC other than localhost you will have to enter your machine's IP
   docker run -d -p 8082:80 \
-     -e INFLUXDB_HOST=$local_ip_i_have_entered_manually \
+     -e INFLUXDB_HOST=localhost \
      -e INFLUXDB_PORT=8086 \
      -e INFLUXDB_NAME=nubuntu \
      -e INFLUXDB_USER=root \
